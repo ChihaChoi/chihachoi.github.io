@@ -1,0 +1,15 @@
+.skills .header {
+  margin-bottom: 50px;
+}
+
+.skills {
+  text-align: center;
+  position: relative;
+}
+.skills-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
