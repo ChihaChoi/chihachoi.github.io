@@ -6,7 +6,8 @@
 .flex-col {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  align-content: center; }
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -56,6 +57,12 @@ body {
 body {
   overflow-x: hidden; }
 
+.list {
+  list-style: none; }
+  @media (max-width: 599px) {
+    .list {
+      padding: 0 2rem; } }
+
 .hero-header {
   position: absolute;
   left: 60%;
@@ -69,12 +76,13 @@ body {
 .skills {
   text-align: center;
   position: relative; }
+  .skills .header {
+    line-height: 200%; }
 
 .skills-body {
-  position: absolute;
+  position: relative;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translateY(-50%); }
 
 .showcase {
   display: flex;

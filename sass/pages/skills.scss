@@ -5,11 +5,14 @@
 .skills {
   text-align: center;
   position: relative;
-}
-.skills-body {
-  position: absolute;
-  top: 50%;
-  left: 50%;
 
-  transform: translate(-50%, -50%);
+  & .header {
+    line-height: 200%;
+  }
+}
+
+.skills-body {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }

@@ -1,0 +1,6 @@
+.list {
+  list-style: none;
+  @include phone {
+    padding: 0 2rem;
+  }
+}
