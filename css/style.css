@@ -9,10 +9,23 @@
   align-items: center;
   align-content: center; }
 
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent; }
+
+body {
+  overflow-x: hidden; }
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
-  color: #000a; }
+  color: #000a;
+  font-size: 1rem; }
+  @media (max-width: 599px) {
+    body {
+      font-size: 0.8rem; } }
 
 .header {
   line-height: 100%;
@@ -28,6 +41,9 @@ body {
     .header.sub {
       font-size: 1.64rem; } }
 
+li {
+  margin-top: 8px; }
+
 .btn {
   border: 1px solid #000a;
   padding: 1rem 2rem;
@@ -39,7 +55,7 @@ body {
   transition: 0.1s; }
   @media (max-width: 599px) {
     .btn {
-      font-size: 1.3rem;
+      font-size: 1rem;
       padding: 0.7rem 1.5rem; } }
 
 .btn:hover {
@@ -49,15 +65,6 @@ body {
 .btn:active {
   transform: translateY(2px) scale(0.95);
   box-shadow: 0px 9px 27px -15px rgba(0, 0, 0, 0.75); }
-
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  -webkit-tap-highlight-color: transparent; }
-
-body {
-  overflow-x: hidden; }
 
 .list {
   list-style: none; }
