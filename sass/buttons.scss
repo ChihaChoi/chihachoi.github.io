@@ -8,6 +8,15 @@
   color: inherit;
 
   transition: 0.1s;
+
+  @include phone {
+    font-size: 1.3rem;
+    padding: 0.7rem 1.5rem;
+  }
+}
+.btn:hover {
+  transform: translateY(1px) scale(1);
+  box-shadow: 0px 9px 27px -15px rgba(0, 0, 0, 0.35);
 }
 .btn:active {
   transform: translateY(2px) scale(0.95);

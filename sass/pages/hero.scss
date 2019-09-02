@@ -3,4 +3,9 @@
   left: 60%;
   top: 50%;
   transform: translateY(-50%);
+
+  @include phone {
+    position: relative;
+    left: 0%;
+  }
 }

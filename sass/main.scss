@@ -1,11 +1,12 @@
+@import "utility/utility.scss";
+@import "utility/responsive.scss";
+
 @import "typography.scss";
 @import "buttons.scss";
 @import "base.scss";
-@import "headers.scss";
 
 @import "pages/hero.scss";
 @import "pages/skills.scss";
 @import "pages/showcase.scss";
 
-@import "utility/utility.scss";
 @import "sections.scss";
