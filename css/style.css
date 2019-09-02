@@ -72,6 +72,22 @@ li {
     .list {
       padding: 0 2rem; } }
 
+.li-break::before {
+  content: "";
+  display: block;
+  width: 100px;
+  border-bottom: 2px solid #000a;
+  margin-bottom: 10px;
+  padding-bottom: 15px; }
+
+.list hr {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 20px;
+  border-bottom: 1px;
+  margin-bottom: 12px; }
+
 .hero-header {
   position: absolute;
   left: 60%;
