@@ -52,6 +52,7 @@ img {
   left: 50%;
   transform: translateX(-50%);
   @include phone {
-    width: 33vw;
+    height: 100%;
+    width: auto;
   }
 }
