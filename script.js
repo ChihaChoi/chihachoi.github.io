@@ -8,6 +8,20 @@ const offsetFromDate = new Date(2022, 0, 1);
 const msOffset = Date.now() - offsetFromDate;
 const dayOffset = msOffset / 1000 / 60 / 60 / 24;
 const targetWord = "kek";
+const greenEmoji = ":hypern:";
+const yellowEmoji = ":smugA:";
+const redEmoji = ":bencel:";
+const preGuessGridMessage = "Chidle";
+const postGuessGridMessage = "\n https://chihachoi.github.io/index.html";
+const numberOfGuessesEmojis = [
+  ":googleGary:",
+  ":gladge:",
+  ":YEP:",
+  ":UHM:",
+  ":criticalP:",
+  ":mald:",
+  ":digi:",
+];
 
 startInteraction();
 
@@ -168,7 +182,10 @@ function checkWinLose(guess, tiles) {
 
   const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])");
   if (remainingTiles.length === 0) {
-    showAlert(targetWord.toUpperCase(), null);
+    document.querySelector(".share-button").style.display = "block";
+    document.querySelector(
+      ".share-button"
+    ).innerHTML = `GG the word was ${targetWord}. Click here to share your failure`;
     stopInteraction();
   }
 }
@@ -196,22 +213,23 @@ function writeMessage() {
   const guesses = Array.from(guessGrid.querySelectorAll("[data-letter]")).map(
     (node) => node.attributes["data-state"].value
   );
+  const attempts = guesses.length / 3 - 1;
   let newLineCount = 0;
-  let message = "";
+  let message = preGuessGridMessage + ` ${numberOfGuessesEmojis[attempts]}/8\n`;
+
   guesses.forEach((guess) => {
-    // console.log(guess);
     console.log(newLineCount);
 
     switch (guess) {
       case "correct":
         console.log("correct");
-        message = message.concat(":proud:");
+        message = message.concat(greenEmoji);
         break;
       case "wrong":
-        message = message.concat(":smugA:");
+        message = message.concat(redEmoji);
         break;
       case "wrong-location":
-        message = message.concat(":copium:");
+        message = message.concat(yellowEmoji);
         break;
     }
 
@@ -221,6 +239,6 @@ function writeMessage() {
       newLineCount = 0;
     }
   });
-  console.log(message);
+  message = message.concat(postGuessGridMessage);
   return message;
 }

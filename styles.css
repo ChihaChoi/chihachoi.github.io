@@ -17,8 +17,8 @@ body {
 
 .keyboard {
   display: grid;
-  grid-template-columns: repeat(20, minmax(auto, 1.25em));
-  grid-auto-rows: 3em;
+  grid-template-columns: repeat(20, minmax(auto, 1.75em));
+  grid-auto-rows: 4em;
   gap: 0.25em;
   justify-content: center;
 }
@@ -211,11 +211,10 @@ body {
 }
 .share-button {
   background-color: hsl(240, 2%, 23%);
+  color: white;
   display: none;
-  position: fixed;
-  top: 10vh;
-  left: 50vw;
-  transform: translateX(-50%);
+  align-self: center;
+  margin-bottom: 50px;
   border-radius: 5px;
   /* width: 300px; */
   padding: 20px;
