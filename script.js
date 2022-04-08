@@ -213,7 +213,7 @@ function writeMessage() {
   const guesses = Array.from(guessGrid.querySelectorAll("[data-letter]")).map(
     (node) => node.attributes["data-state"].value
   );
-  const attempts = guesses.length / 3 - 1;
+  const attempts = guesses.length / WORD_LENGTH - 1;
   let newLineCount = 0;
   let message = preGuessGridMessage + ` ${numberOfGuessesEmojis[attempts]}/8\n`;
 
