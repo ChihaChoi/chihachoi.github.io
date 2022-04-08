@@ -1,4 +1,4 @@
-const WORD_LENGTH = 3;
+const WORD_LENGTH = 4;
 const FLIP_ANIMATION_DURATION = 500;
 const DANCE_ANIMATION_DURATION = 500;
 const keyboard = document.querySelector("[data-keyboard]");
@@ -7,7 +7,7 @@ const guessGrid = document.querySelector("[data-guess-grid]");
 const offsetFromDate = new Date(2022, 0, 1);
 const msOffset = Date.now() - offsetFromDate;
 const dayOffset = msOffset / 1000 / 60 / 60 / 24;
-const targetWord = "kek";
+const targetWord = "digi";
 const greenEmoji = ":hypern:";
 const yellowEmoji = ":smugA:";
 const redEmoji = ":bencel:";
