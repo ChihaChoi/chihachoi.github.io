@@ -1,4 +1,6 @@
-const WORD_LENGTH = 4;
+const targetWord = "reee";
+const WORD_LENGTH = targetWord.length;
+const NUMBER_OF_GUESSES = 6;
 const FLIP_ANIMATION_DURATION = 500;
 const DANCE_ANIMATION_DURATION = 500;
 const keyboard = document.querySelector("[data-keyboard]");
@@ -7,7 +9,6 @@ const guessGrid = document.querySelector("[data-guess-grid]");
 const offsetFromDate = new Date(2022, 0, 1);
 const msOffset = Date.now() - offsetFromDate;
 const dayOffset = msOffset / 1000 / 60 / 60 / 24;
-const targetWord = "digi";
 const greenEmoji = ":hypern:";
 const yellowEmoji = ":smugA:";
 const redEmoji = ":bencel:";
@@ -22,6 +23,20 @@ const numberOfGuessesEmojis = [
   ":mald:",
   ":digi:",
 ];
+const winMessage = 'click to VICTORYYYY SCREEEEEECHHH'
+const loseMessage = (word) => `gg the word was ${word}. click to let everyone know you're a dissapointment`
+
+function createGrid(){
+  let container = document.querySelector('.guess-grid')
+  container.style.gridTemplateColumns =  `repeat(${WORD_LENGTH}, 4em)`;
+  for(let i=0; i< WORD_LENGTH * NUMBER_OF_GUESSES; i++){
+    const newDiv = document.createElement("div");
+    newDiv.classList.add('tile')
+    container.append(newDiv)
+  }
+}
+
+createGrid()
 
 startInteraction();
 
@@ -173,8 +188,10 @@ function shakeTiles(tiles) {
 }
 
 function checkWinLose(guess, tiles) {
+  let shareButton = document.querySelector(".share-button")
   if (guess === targetWord) {
-    document.querySelector(".share-button").style.display = "block";
+    shareButton.style.display = "block";
+    shareButton.innerHTML = winMessage;
     danceTiles(tiles);
     stopInteraction();
     return;
@@ -182,10 +199,8 @@ function checkWinLose(guess, tiles) {
 
   const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])");
   if (remainingTiles.length === 0) {
-    document.querySelector(".share-button").style.display = "block";
-    document.querySelector(
-      ".share-button"
-    ).innerHTML = `GG the word was ${targetWord}. Click here to share your failure`;
+    shareButton.style.display = "block";
+    shareButton.innerHTML = loseMessage(targetWord);
     stopInteraction();
   }
 }
@@ -215,7 +230,7 @@ function writeMessage() {
   );
   const attempts = guesses.length / WORD_LENGTH - 1;
   let newLineCount = 0;
-  let message = preGuessGridMessage + ` ${numberOfGuessesEmojis[attempts]}/8\n`;
+  let message = preGuessGridMessage + ` ${numberOfGuessesEmojis[attempts]}/${NUMBER_OF_GUESSES}\n`;
 
   guesses.forEach((guess) => {
     console.log(newLineCount);
