@@ -1,4 +1,4 @@
-const targetWord = "reee";
+const targetWord = "hebote";
 const WORD_LENGTH = targetWord.length;
 const NUMBER_OF_GUESSES = 6;
 const FLIP_ANIMATION_DURATION = 500;
@@ -23,7 +23,7 @@ const numberOfGuessesEmojis = [
   ":mald:",
   ":digi:",
 ];
-const winMessage = 'click to VICTORYYYY SCREEEEEECHHH'
+const winMessage = 'click to :pepepoint::rentfree::overkek:'
 const loseMessage = (word) => `gg the word was ${word}. click to let everyone know you're a dissapointment`
 
 function createGrid(){
