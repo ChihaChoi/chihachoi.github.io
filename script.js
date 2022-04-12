@@ -1,4 +1,4 @@
-const targetWord = "hebote";
+const targetWord = "noema";
 const WORD_LENGTH = targetWord.length;
 const NUMBER_OF_GUESSES = 6;
 const FLIP_ANIMATION_DURATION = 500;
@@ -14,17 +14,27 @@ const yellowEmoji = ":smugA:";
 const redEmoji = ":bencel:";
 const preGuessGridMessage = "Chidle";
 const postGuessGridMessage = "\n https://chihachoi.github.io/index.html";
+// const numberOfGuessesEmojis = [
+//   ":googleGary:",
+//   ":gladge:",
+//   ":YEP:",
+//   ":UHM:",
+//   ":criticalP:",
+//   ":mald:",
+//   ":digi:",
+// ];
 const numberOfGuessesEmojis = [
-  ":googleGary:",
-  ":gladge:",
-  ":YEP:",
-  ":UHM:",
-  ":criticalP:",
-  ":mald:",
-  ":digi:",
+  ":cryge:",
+  ":cryge:",
+  ":cryge:",
+  ":cryge:",
+  ":cryge:",
+  ":cryge:",
+  ":cryge:",
 ];
-const winMessage = 'click to :pepepoint::rentfree::overkek:'
-const loseMessage = (word) => `gg the word was ${word}. click to let everyone know you're a dissapointment`
+const winMessage = 'why she gotta ignore all my chidles. click to :cryge:'
+// const loseMessage = (word) => `gg the word was ${word}. click to let everyone know you're a dissapointment`
+const loseMessage = (word) => `gg the word was ${word}. click to :cryge:`
 
 function createGrid(){
   let container = document.querySelector('.guess-grid')
