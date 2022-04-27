@@ -1,4 +1,4 @@
-const targetWord = "noema";
+const targetWord = "googlegary";
 const WORD_LENGTH = targetWord.length;
 const NUMBER_OF_GUESSES = 6;
 const FLIP_ANIMATION_DURATION = 500;
@@ -14,39 +14,39 @@ const yellowEmoji = ":smugA:";
 const redEmoji = ":bencel:";
 const preGuessGridMessage = "Chidle";
 const postGuessGridMessage = "\n https://chihachoi.github.io/index.html";
-// const numberOfGuessesEmojis = [
-//   ":googleGary:",
-//   ":gladge:",
-//   ":YEP:",
-//   ":UHM:",
-//   ":criticalP:",
-//   ":mald:",
-//   ":digi:",
-// ];
 const numberOfGuessesEmojis = [
-  ":cryge:",
-  ":cryge:",
-  ":cryge:",
-  ":cryge:",
-  ":cryge:",
-  ":cryge:",
-  ":cryge:",
+  ":googleGary:",
+  ":gladge:",
+  ":YEP:",
+  ":UHM:",
+  ":criticalP:",
+  ":mald:",
+  ":digi:",
 ];
-const winMessage = 'why she gotta ignore all my chidles. click to :cryge:'
+// const numberOfGuessesEmojis = [
+//   ":cryge:",
+//   ":cryge:",
+//   ":cryge:",
+//   ":cryge:",
+//   ":cryge:",
+//   ":cryge:",
+//   ":cryge:",
+// ];
+const winMessage = "click if you're kinda sus";
 // const loseMessage = (word) => `gg the word was ${word}. click to let everyone know you're a dissapointment`
-const loseMessage = (word) => `gg the word was ${word}. click to :cryge:`
+const loseMessage = (word) => `gg the word was ${word}. click to :cryge:`;
 
-function createGrid(){
-  let container = document.querySelector('.guess-grid')
-  container.style.gridTemplateColumns =  `repeat(${WORD_LENGTH}, 4em)`;
-  for(let i=0; i< WORD_LENGTH * NUMBER_OF_GUESSES; i++){
+function createGrid() {
+  let container = document.querySelector(".guess-grid");
+  container.style.gridTemplateColumns = `repeat(${WORD_LENGTH}, 4em)`;
+  for (let i = 0; i < WORD_LENGTH * NUMBER_OF_GUESSES; i++) {
     const newDiv = document.createElement("div");
-    newDiv.classList.add('tile')
-    container.append(newDiv)
+    newDiv.classList.add("tile");
+    container.append(newDiv);
   }
 }
 
-createGrid()
+createGrid();
 
 startInteraction();
 
@@ -198,12 +198,13 @@ function shakeTiles(tiles) {
 }
 
 function checkWinLose(guess, tiles) {
-  let shareButton = document.querySelector(".share-button")
+  let shareButton = document.querySelector(".share-button");
   if (guess === targetWord) {
     shareButton.style.display = "block";
     shareButton.innerHTML = winMessage;
     danceTiles(tiles);
     stopInteraction();
+    window.open("https://www.google.com/search?q=how+to+google+wordle");
     return;
   }
 
@@ -240,7 +241,9 @@ function writeMessage() {
   );
   const attempts = guesses.length / WORD_LENGTH - 1;
   let newLineCount = 0;
-  let message = preGuessGridMessage + ` ${numberOfGuessesEmojis[attempts]}/${NUMBER_OF_GUESSES}\n`;
+  let message =
+    preGuessGridMessage +
+    ` ${numberOfGuessesEmojis[attempts]}/${NUMBER_OF_GUESSES}\n`;
 
   guesses.forEach((guess) => {
     console.log(newLineCount);
