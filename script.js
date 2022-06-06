@@ -1,4 +1,4 @@
-const targetWord = "rentfree";
+const targetWord = "gladge";
 const WORD_LENGTH = targetWord.length;
 const NUMBER_OF_GUESSES = 6;
 const FLIP_ANIMATION_DURATION = 500;
@@ -32,7 +32,7 @@ const numberOfGuessesEmojis = [
 //   ":cryge:",
 //   ":cryge:",
 // ];
-const winMessage = "click to :pepepoint::overkek::underkek:";
+const winMessage = "click if you're :gladge: to be back";
 // const loseMessage = (word) => `gg the word was ${word}. click to let everyone know you're a dissapointment`
 const loseMessage = (word) => `gg the word was ${word}. click to :cryge:`;
 
