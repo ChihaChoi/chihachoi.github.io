@@ -204,7 +204,6 @@ function checkWinLose(guess, tiles) {
     shareButton.innerHTML = winMessage;
     danceTiles(tiles);
     stopInteraction();
-    window.open("https://www.google.com/search?q=how+to+google+wordle");
     return;
   }
 
